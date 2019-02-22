@@ -42,3 +42,13 @@ section {
   padding-right: 30rem;
   padding-top: 2rem;
 }
+
+#grade {
+  margin-top: 70px !important;
+  color: white;
+}
+
+.eachData{
+  margin-top: 20px !important;
+  color: white;
+}

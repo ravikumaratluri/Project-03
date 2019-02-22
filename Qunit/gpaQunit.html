@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>QUnit Testing</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+    <script src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script>
+
+        function getGpa(s) {
+            if (s == "A") {
+                return 4.0;
+            } else if (s == "B") {
+                return 3.0;
+            } else if (s == "C") {
+                return 2.0;
+            } else if (s == "D") {
+                return 1.0;
+            } else if (s == "F") {
+                return 0.0;
+            }
+        }
+
+        function getGrade(s) {
+            if (s > 3.0) {
+                return "A";
+            } else if (s > 2.0) {
+                return "B";
+            } else if (s > 1.0) {
+                return "C";
+            } else if (s > 0.0) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+            </script>
+<script>
+            QUnit.module("Grade validation One")
+            QUnit.test("Grade Validation", function (assert) {
+                var result = getGrade(4.0);
+                assert.equal(result, "A", "Grade picked correctely");
+            });
+            QUnit.module("Grade validation Two")
+            QUnit.test("Grade Validation", function (assert) {
+                var result = getGrade(3.0);
+                assert.equal(result, "B", "Grade picked correctely");
+            });
+            QUnit.module("Grade validation Three")
+            QUnit.test("Grade Validation", function (assert) {
+                var result = getGrade(2.0);
+                assert.equal(result, "C", "Grade picked correctely");
+            });
+
+            QUnit.module("Gpa validation Two")
+            QUnit.test("Gpa Validation", function (assert) {
+                var result = getGpa("A");
+                assert.equal(result, 4.0, "Gpa picked correctely");
+            });
+            QUnit.module("Gpa validation One")
+            QUnit.test("Grade Validation", function (assert) {
+                var result = getGpa("B");
+                assert.equal(result, 3.0, "Gpa picked correctely");
+            });
+            QUnit.module("Gpa validation Three")
+            QUnit.test("Grade Validation", function (assert) {
+                var result = getGpa("C");
+                assert.equal(result, 2.0, "Gpa picked correctely");
+            });
+        </script>
+
+</body>
+
+
+    
+
+</html>

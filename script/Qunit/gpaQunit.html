@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>QUnit basic example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+    <script src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script>
+        function checkPassword(inputPassword) {
+            var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+            if (re.test(inputPassword)) {
+
+                return true;
+            }
+            else {
+                window.alert("Make Sure Your Password contains a digit , a capital letter, a small letter and it should be minimum 8 characters");
+                return false;
+            }
+        }
+        function Fahrenheit_To_Celcius(valNum) {
+            valNum = parseFloat(valNum);
+            return (valNum - 32) / 1.8;
+        }
+
+        function Fahrenheit_To_Celcius_Invalid(valNum) {
+            valNum = parseFloat(valNum);
+            return (valNum - 30) / 1.2;
+        }
+
+        QUnit.module("Password Validation ")
+        //Test With Valid input ; Result should be true
+        QUnit.test("checkPassword", function (assert) {
+            var result = checkPassword("Testpassword@123");
+            assert.equal(result, true, "Password matches with Password policy ");
+        });
+        //Test With Invalid input ; Result should be false
+        QUnit.test("checkPassword", function (assert) {
+            var result = checkPassword("12345");
+            assert.equal(result, false, "Invalid Password - Result and expected values matched ");
+        });
+        //Test With Invalid input ; Result should be false this test case fails
+        QUnit.test("checkPassword", function (assert) {
+            var result = checkPassword("12345");
+            assert.equal(result, true, "Invalid Password - Expected value is True returned value is false");
+        });
+        QUnit.module("Temperature Converter Fahrenheit To Celcius")
+        QUnit.test("Convert Temperature", function (assert) {
+            var result = Fahrenheit_To_Celcius(32);
+            assert.equal(result, 0, "Conversion Successful");
+        });
+        QUnit.test("Convert Temperature", function (assert) {
+            var result = Fahrenheit_To_Celcius_Invalid(32);
+            assert.equal(result, 0, "Conversion Failed!!!");
+        });
+
+
+    </script>
+</body>
+
+</html>

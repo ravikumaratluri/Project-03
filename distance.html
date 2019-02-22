@@ -12,10 +12,10 @@
     <!-- Link to CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
-    
+    <link rel = "stylesheet" href = "https://code.jquery.com/qunit/qunit-2.9.1.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-   
+
     <title>Ravi Kumar Atluri</title>
 </head>
 
@@ -38,36 +38,53 @@
         </div>
 
     </nav>
-    <header class="container-fluid">
-        <h1>Ravi Kumar Atluri</h1>
-    </header>
+<main>
+    <div class="container mx-auto" >
+        <div id="grade" class="row">
+            <h3> Overall Grade and Gpa Calculator</h3>
+        </div>
 
-    
-    <div id="calc">
-      <div >
-    <strong><label >Kilometers</label> </strong>
-        <input type = "number" id="kilo_meter_id" name="kilo_meter_id" placeholder="enter number only"  class="form-control"
-        oninput="calc(this.value)" onchange="calc(this.value)">
-<p> Miles :<span id="mile_one"></span></p>
-      </div>
-      <div class=>
-     <strong>   <label >Miles</label> </strong>
-     <input type = "number" id="mile_id" name="mile_id" placeholder="enter number only"  class="form-control"
-     oninput="calcOne(this.value)" onchange="calcOne(this.value)">
-<p> Kilometers :<span id="Kilomile_one"></span></p>
-<script >
-        function calc(value) {
-            value= parseInt(value);
-        document.getElementById("mile_one").innerHTML = (value*1.6);
-      }
-    
-      function calcOne(value) {
-            value= parseInt(value);
-        document.getElementById("Kilomile_one").innerHTML = (value/1.6);
-      }
-        </script>
-      </div> 
+        <div class="row eachData">
+                <strong class="col-md-2"><label>Input Type</label> </strong>
+            <select id="input_type" class="col-md-2">
+                <option value="gpa" >GPA</option>
+                <option value="grade" >GRADE</option>
+            </select>
+        </div>
+
+        <div class="row eachData">
+            <strong  class="col-md-2"><label>Web App's</label> </strong>
+            <input id="sub_one" name="subjectOne"  class="col-md-2" placeholder="Enter Value">
+
+        </div>
+
+        <div class="row eachData">
+            <strong class="col-md-2"> <label>JAVA</label> </strong>
+            <input id="sub_two" name="subjectTwo"class="col-md-2" placeholder="Enter Value " >
+        </div>
+
+        <div class="row eachData">
+            <strong class="col-md-2"> <label>DataBase Systems</label> </strong>
+            <input id="sub_three" name="subjectThree" class="col-md-2" placeholder="Enter Value">
+        </div>
+
+        <div class="row eachData mx-auto">
+            <button id="submit" >Submit</button>
+            </div>
+            <div class="row eachData">
+                   <h3> <p id="result"></p>
+                     <h3>
+                        <br>
+                        <p id="jokeId"></p>
+                    </div>
+
     </div>
-        </body>
-        
-    </html>
+</main>
+    <footer>
+        <script src="./script/distance.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src = "https://code.jquery.com/qunit/qunit-2.1.9.js"></script>
+    </footer>
+</body>
+
+</html>
