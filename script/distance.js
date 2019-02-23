@@ -66,6 +66,25 @@ document.getElementById('submit').addEventListener('click', function () {
 
 });
 
+document.getElementById('input_type').addEventListener('change', function(){
+  let subOne = document.getElementById('sub_one');
+  let subTwo = document.getElementById('sub_two');
+  let subThree = document.getElementById('sub_three');
+  if(this.value == "grade"){
+    subOne.placeholder = "Enter Grade Value";
+    subTwo.placeholder = "Enter Grade Value";
+    subThree.placeholder = "Enter Grade Value";
+  }else{
+    subOne.placeholder = "Enter Gpa Value";
+    subTwo.placeholder = "Enter Gpa Value";
+    subThree.placeholder = "Enter Gpa Value";
+  }
+  subOne.value = "";
+  subTwo.value = "";
+  subThree.value = "";
+});
+
+
 function getGpa(s) {
   if (s == "A") {
     return 4.0;
