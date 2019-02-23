@@ -46,7 +46,7 @@ document.getElementById('submit').addEventListener('click', function () {
     const ans = 'Over Grade is: ' + overAllGrade + '.' + '\n' + 'Over Gpa is: ' + overAllGpa;
     document.getElementById('result').innerHTML = ans;
     $.ajax({
-      url: "http://api.icndb.com/jokes/random?limitTo=[nerdy]",
+      url: "https://api.icndb.com/jokes/random?limitTo=[nerdy]",
       cache: false,
       dataType: "json",
       type: "GET",
