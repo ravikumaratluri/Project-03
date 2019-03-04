@@ -35,15 +35,17 @@ document.getElementById('submit').addEventListener('click', function () {
     } else {
       gradeOne = getGpa(subOne);
       gradeTwo = getGpa(subTwo);
-      subThree = getGpa(subThree);
+      gradeThree = getGpa(subThree);
       condition = "true";
     }
 
   }
   let overAllGpa = (gradeOne + gradeTwo + gradeThree) / 3;
   let overAllGrade = getGrade(overAllGpa);
+  let ans;
+  console.log("one "+gradeOne+" Two "+gradeTwo+" Three "+gradeThree)
   if (condition == "true") {
-    const ans = 'Over Grade is: ' + overAllGrade + '.' + '\n' + 'Over Gpa is: ' + overAllGpa;
+     ans = 'Over Grade is: ' + overAllGrade + '.' + '\n' + 'Over Gpa is: ' + overAllGpa;
     document.getElementById('result').innerHTML = ans;
     $.ajax({
       url: "https://api.icndb.com/jokes/random?limitTo=[nerdy]",
@@ -63,7 +65,11 @@ document.getElementById('submit').addEventListener('click', function () {
     document.getElementById('jokeId').innerHTML = "";
 
   }
+  localStorage.setItem('result',ans )
+});
 
+document.getElementById('localStorage').addEventListener('click', function(){
+  document.getElementById('localStorageValue').innerHTML = localStorage.getItem('result');
 });
 
 document.getElementById('input_type').addEventListener('change', function(){
